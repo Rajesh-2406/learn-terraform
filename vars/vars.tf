@@ -17,3 +17,9 @@ output  "sample1" {
 output  "samplr-ext"  {
   value = "Value of sample &  sample1 - ${var.sample} - ${var.sample1}"
 }
+
+variable "env" {}
+
+output  "env" {
+  value = var.env
+}
