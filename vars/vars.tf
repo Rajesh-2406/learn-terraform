@@ -13,3 +13,7 @@ output  "sample"  {
 output  "sample1" {
   value = var.sample1
 }
+
+output  "samplr-ext"  {
+  value = "Value of sample &  sample1 - ${var.sample} - ${var.sample1}"
+}
