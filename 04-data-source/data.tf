@@ -1,5 +1,5 @@
 data  "aws_ec2_spot_price" "example" {
-  instance_type = "t3.medium"
+  instance_type = "t2.medium"
   availability_zone = "us-east-1a"
 }
 
