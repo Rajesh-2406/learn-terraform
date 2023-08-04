@@ -8,18 +8,17 @@ resource "aws_instance" "web" {
   }
 }
 
-provisioner "remote-exec" {
+  provisioner "remote-exec" {
 
-  connection {
-    type     = "ssh"
-    user     = "centos"
-    password = "DevOps321"
-    host     = "self.public_ip"
-   }
-
+      connection {
+           type     = "ssh"
+           user     = "centos"
+           password = "DevOps321"
+           host     = self.public_ip
+       }
     inline = [
-      "Sudo labauto ansible",
-      "ansible-pull -i localhost, -u https://github.com/Rajesh-2406/roboshop-ansible.git main.yml -e env=dev -e role_name=${var.name}"
+      "sudo labauto ansible",
+     "ansible-pull -i localhost, -u  https://github.com/Rajesh-2406/roboshop-ansible main.yml -e env=dev -e role_name=${var.name}"
     ]
   }
 
