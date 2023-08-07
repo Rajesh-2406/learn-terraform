@@ -7,6 +7,7 @@ resource "aws_instance" "web" {
     Name = var.name
   }
 
+
   provisioner "remote-exec" {
 
     connection {
@@ -23,7 +24,7 @@ resource "aws_instance" "web" {
 }
 resource "aws_route53_record" "www" {
   zone_id = "Z0536318FEJNHSSCY1LA"
-  name    = "${var.name}=dev"
+  name    = "${var.name}-dev"
   type    = "A"
   ttl     = 300
   records = [aws_instance.web.private_ip]
