@@ -4,7 +4,7 @@ resource  "aws_instance" "web" {
   vpc_security_group_ids = ["sg-00a06bc0fff373ab1"]
 
   tags = {
-    name = "HelloWorld"
+    name = "Result"
   }
 
   provisioner "remote-exec" {
@@ -17,7 +17,7 @@ resource  "aws_instance" "web" {
     }
     inline = [
       "sudo labauto ansible",
-      "ansible-pull -i localhost, -u  https://github.com/Rajesh-2406/roboshop-ansible.git main.yml -e env=dev -e role_name=frontend"
+      "ansible-pull -i localhost, -u  https://github.com/Rajesh-2406/roboshop-ansible main.yml -e env=dev -e role_name=frontend"
     ]
   }
 }
